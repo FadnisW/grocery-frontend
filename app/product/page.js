@@ -16,7 +16,7 @@ import ProductInfo from "../_components/ProductInfo";
 
 
 const Product = () => {
-  const BASE_URL = 'http://127.0.0.1:1337';
+  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
   const [ProductList, setProductList] = useState([]);
 
   useEffect(() => {

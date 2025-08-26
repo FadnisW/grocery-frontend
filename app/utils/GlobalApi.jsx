@@ -1,12 +1,10 @@
 import axios from "axios";
 
 // Use environment variables for API URLs
-export const basURL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL
-  ? process.env.NEXT_PUBLIC_BACKEND_BASE_URL.replace('/api', '')
-  : "http://127.0.0.1:1337";
+export const basURL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
 
 const axiosClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BACKEND_BASE_URL || "http://127.0.0.1:1337/api",
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_BASE_URL,
 });
 //GetBanner Fetch from Strapi
 const getBanner = () =>
