@@ -9,8 +9,7 @@ import { UpdateCartContext } from "../_Context/_UpdateCartContext";
 import { useContext } from "react";
 
 const ProductInfo = ({ product }) => {
-  const BASE_URL = "http://127.0.0.1:1337";
-
+  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const router = useRouter();

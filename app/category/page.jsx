@@ -19,7 +19,7 @@ const SearchComponent = () => {
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
   // Use the environment variable instead of hardcoded URL
-  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL
+  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
 
   useEffect(() => {
     if (searchQuery) {
