@@ -1,10 +1,12 @@
 import axios from "axios";
 
 // Use environment variables for API URLs
-export const basURL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
+export const basURL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL
+  ? process.env.NEXT_PUBLIC_BACKEND_BASE_URL.replace('/api', '')
+  : "https://grocery-backend-rhiu.onrender.com";
 
 const axiosClient = axios.create({
-  baseURL: process.env.NEXT_PUBLIC_BACKEND_BASE_URL,
+  baseURL: process.env.NEXT_PUBLIC_BACKEND_BASE_URL || "https://grocery-backend-rhiu.onrender.com/api",
 });
 //GetBanner Fetch from Strapi
 const getBanner = () =>
