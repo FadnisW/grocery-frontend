@@ -6,7 +6,7 @@ import React, { useEffect, useState } from "react";
 
 const Category = () => {
   // const BASE_URL = "http://localhost:1337";
-  const BASE_URL = "http://127.0.0.1:1337";
+  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
   const [CategoryList, setCategoryList] = useState([]);
 
   useEffect(() => {

@@ -15,7 +15,7 @@ import ProductInfo from "@/app/_components/ProductInfo";
 
 const CategoryProductList = ({ categoryName }) => {
     
-  const BASE_URL = 'http://127.0.0.1:1337';
+  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
   const [ProductList, setProductList] = useState([]);
   const [loading, setLoading] = useState(true);
   // Decode the category name to handle special characters
