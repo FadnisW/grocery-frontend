@@ -18,7 +18,10 @@ const SearchComponent = () => {
   const searchQuery = searchParams.get('search');
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  const BASE_URL = 'http://127.0.0.1:1337';
+  // Use the environment variable instead of hardcoded URL
+  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL
+    ? process.env.NEXT_PUBLIC_BACKEND_BASE_URL.replace('/api', '')
+    : "http://127.0.0.1:1337";
 
   useEffect(() => {
     if (searchQuery) {
