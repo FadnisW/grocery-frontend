@@ -1,12 +1,12 @@
 "use client";
-import GlobalApi from "@/app/utils/GlobalApi";
+import GlobalApi, { basURL } from "@/app/utils/GlobalApi";
 import Link from "next/link";
 // import Image from "next/image";
 import React, { useEffect, useState } from "react";
 
 const Category = () => {
   // const BASE_URL = "http://localhost:1337";
-  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
+  //const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
   const [CategoryList, setCategoryList] = useState([]);
 
   useEffect(() => {
@@ -40,7 +40,7 @@ const Category = () => {
               >
                 <div className="w-[60px] h-[60px] sm:w-[70px] sm:h-[70px] md:w-[75px] md:h-[75px] flex items-center justify-center">
                   <img
-                    src={`${BASE_URL}${category?.attributes?.img?.data?.attributes?.url}`}
+                    src={`${basURL}${category?.attributes?.img?.data?.attributes?.url}`}
                     className="hover:scale-110 rounded-lg hover:transition-transform cursor-pointer max-w-full max-h-full object-contain"
                     alt="Category"
                   />
