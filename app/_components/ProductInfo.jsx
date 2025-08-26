@@ -32,7 +32,8 @@ const ProductInfo = ({ product }) => {
         }
         
         // If not in sessionStorage, fetch from API
-        const res = await fetch("http://127.0.0.1:1337/api/users/me", {
+        const baseUrl = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
+        const res = await fetch(`${baseUrl}/api/users/me`, {
           headers: {
             Authorization: `Bearer ${jwt}`,
           },
