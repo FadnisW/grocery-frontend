@@ -4,12 +4,11 @@ import { toast } from "sonner";
 import { LoaderCircleIcon, Router, ShoppingBag } from "lucide-react";
 import { useRouter } from "next/navigation";
 import React, { useState, useEffect, use } from "react";
-import GlobalApi from "../utils/GlobalApi";
+import GlobalApi, { basURL } from "../utils/GlobalApi";
 import { UpdateCartContext } from "../_Context/_UpdateCartContext";
 import { useContext } from "react";
 
 const ProductInfo = ({ product }) => {
-  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -110,7 +109,7 @@ const ProductInfo = ({ product }) => {
     <>
       <div className="grid grid-cols-1 md:grid-cols-2 p-7 bg-white text-black">
         <img
-          src={`${BASE_URL}${product?.attributes?.img?.data?.attributes?.url}`}
+          src={`${basURL}${product?.attributes?.img?.data?.attributes?.url}`}
           alt="Image"
           width={300}
           height={300}

@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import GlobalApi from "@/app/utils/GlobalApi";
+import GlobalApi, { basURL } from "@/app/utils/GlobalApi";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { ShoppingBag } from "lucide-react";
 import {
@@ -14,8 +14,6 @@ import {
 import ProductInfo from "@/app/_components/ProductInfo";
 
 const CategoryProductList = ({ categoryName }) => {
-    
-  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
   const [ProductList, setProductList] = useState([]);
   const [loading, setLoading] = useState(true);
   // Decode the category name to handle special characters
@@ -66,7 +64,7 @@ const CategoryProductList = ({ categoryName }) => {
                 <a href="#">
                   <img
                     className="rounded-t-lg p-8 hover:scale-125 hover:transition-transform cursor-pointer object-contain w-full h-48"
-                    src={`${BASE_URL}${product?.attributes?.img?.data?.attributes?.url}`}
+                    src={`${basURL}${product?.attributes?.img?.data?.attributes?.url}`}
                     alt="Product Image"
                   />
                 </a>

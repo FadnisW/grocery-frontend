@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState, Suspense } from 'react';
 import { useSearchParams } from 'next/navigation';
-import GlobalApi from '@/app/utils/GlobalApi';
+import GlobalApi, { basURL } from '@/app/utils/GlobalApi';
 import { ShoppingBag } from 'lucide-react';
 import {
   Dialog,
@@ -18,8 +18,6 @@ const SearchComponent = () => {
   const searchQuery = searchParams.get('search');
   const [products, setProducts] = useState([]);
   const [loading, setLoading] = useState(true);
-  // Use the environment variable instead of hardcoded URL
-  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
 
   useEffect(() => {
     if (searchQuery) {
@@ -75,7 +73,7 @@ const SearchComponent = () => {
                   <a href="#">
                     <img
                       className="rounded-t-lg p-8 hover:scale-125 hover:transition-transform cursor-pointer object-contain w-full h-48"
-                      src={`${BASE_URL}${product?.attributes?.img?.data?.attributes?.url}`}
+                      src={`${basURL}${product?.attributes?.img?.data?.attributes?.url}`}
                       alt="Product Image"
                     />
                   </a>
