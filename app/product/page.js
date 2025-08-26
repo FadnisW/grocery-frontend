@@ -1,5 +1,5 @@
 "use client";
-import GlobalApi from "@/app/utils/GlobalApi";
+import GlobalApi, { basURL } from "@/app/utils/GlobalApi";
 import React, { useEffect, useState } from "react";
 import { HeartIcon } from "@heroicons/react/24/outline";
 import { ShoppingBag } from "lucide-react";
@@ -16,7 +16,6 @@ import ProductInfo from "../_components/ProductInfo";
 
 
 const Product = () => {
-  const BASE_URL = process.env.NEXT_PUBLIC_BACKEND_BASE_URL;
   const [ProductList, setProductList] = useState([]);
 
   useEffect(() => {
@@ -51,7 +50,7 @@ const Product = () => {
                 <a href="#">
                   <img
                     className="rounded-t-lg p-8 hover:scale-125 hover:transition-transform cursor-pointer object-contain w-full h-48"
-                    src={`${BASE_URL}${product?.attributes?.img?.data?.attributes?.url}`}
+                    src={`${basURL}${product?.attributes?.img?.data?.attributes?.url}`}
                     alt="Product Image"
                   />
                 </a>
