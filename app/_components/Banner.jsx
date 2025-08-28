@@ -22,7 +22,7 @@ const Banner = (/*{ getBanner }*/) => {
               <div className="Banner2 p-5 object-cover rounded-2xl">
                 <div className="relative h-[200px] md:h-[400px] w-full rounded-2xl overflow-hidden">
                   <Image
-                    src="/assets/banner101.png"
+                    src="/assets/Banner101.png"
                     alt="Banner1"
                     fill
                     className="w-full object-contain"
@@ -35,7 +35,7 @@ const Banner = (/*{ getBanner }*/) => {
               <div className="Banner2 p-5 object-cover rounded-2xl">
                 <div className="relative h-[200px] md:h-[400px] w-full rounded-2xl overflow-hidden">
                   <Image
-                    src="/assets/banner102.png"
+                    src="/assets/Banner102.png"
                     alt="Banner1"
                     fill
                     className="w-full object-contain"
@@ -48,7 +48,7 @@ const Banner = (/*{ getBanner }*/) => {
               <div className="Banner2 p-5 object-cover rounded-2xl">
                 <div className="relative h-[200px] md:h-[400px] w-full rounded-2xl overflow-hidden">
                   <Image
-                    src="/assets/banner103.png"
+                    src="/assets/Banner103.png"
                     alt="Banner1"
                     fill
                     className="w-full object-contain"
